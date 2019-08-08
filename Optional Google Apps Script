@@ -1,4 +1,5 @@
 // Written in Google Apps Script //
+// Requires enabling of Advanced Features > Drive //
 // jnseddon, 2019 //
 
 function getURLList(){

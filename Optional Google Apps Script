@@ -1,0 +1,28 @@
+// Written in Google Apps Script //
+// jnseddon, 2019 //
+
+function getURLList(){
+    var ss = SpreadsheetApp.openByUrl(
+      '#address#');
+    var listOfDir = ss.getActiveSheet().getRange("#range#").getValues(); 
+    var folder = DriveApp.getFolderById("#target upload folder#"); 
+    for(i = 0; i < #range length# ; i++){  
+      var filename = listOfDir[i][1];
+      var url = listOfDir[i][0];
+      var imageType = listOfDir[i][2];
+      importFiles(url,filename,imageType,folder);
+      Utilities.sleep(100);
+    }
+}
+
+function importFiles(fileLink, inheritedTitle, imageType, folder) {
+  var image = UrlFetchApp.fetch(fileLink).getBlob();
+  var file = {
+    title: inheritedTitle,
+    parents: [{id:folder.getId()}], 
+    mimeType: imageType
+  };
+
+  file = Drive.Files.insert(file, image);
+  Logger.log('ID: %s, File size (bytes): %s', file.id, file.fileSize);
+}

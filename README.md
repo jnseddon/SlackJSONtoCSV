@@ -5,7 +5,7 @@ The purpose of this code is to convert a downloaded Slack export (via their inte
 
 At time of programming, Slack exports are in the form of daily JSON files per channel. This is not particularly helpful for manipulating or exporting code. 
 
-This program helps convert these JSON files into a per-channel (though invalid) JSON form, and then extracts links to uploaded files via string manipulation, as well as associated helpful information. This can then be directly uploaded to Google Drive through the use of Google Apps Scripts (not attached at this time).
+This program helps convert these JSON files into a per-channel (though invalid) JSON form, and then extracts links to uploaded files via string manipulation, as well as associated helpful information. This can then be directly uploaded to Google Drive through the use of Google Apps Scripts (attached).
 
 Program dependencies:
 - tidyverse
